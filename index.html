@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>For My Yevandi 💖</title>
 <style>
 body {
   margin: 0;
   font-family: 'Comic Sans MS', cursive;
   background: linear-gradient(135deg, #ffd6e8, #fff0f5);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
+/* Stage layout */
 .stage {
   display: none;
-  width: 350vw;
-  height: 350vh;
+  width: 100%;
+  min-height: 100vh;
   text-align: center;
-  padding: 180px;
+  padding: 40px 20px;
   box-sizing: border-box;
   animation: fadeSlide 1s ease;
 }
@@ -30,42 +26,51 @@ body {
   to { opacity: 1; transform: translateX(0); }
 }
 
+/* Headings */
 h1 {
   color: #d63384;
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 15px;
 }
 
+/* Paragraph text */
 p {
-  font-size: 200px;
+  font-size: clamp(16px, 4vw, 20px);
   color: #5a0033;
+  line-height: 1.5;
 }
 
+/* Buttons */
 button {
-  padding: 12px 45px;
-  font-size: 18px;
+  padding: 12px 25px;
+  font-size: clamp(16px, 4vw, 20px);
   border: none;
-  border-radius: 50px;
+  border-radius: 30px;
   background: #ff69b4;
   color: white;
   cursor: pointer;
-  margin: 15px;
+  margin: 12px;
   transition: transform 0.3s;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
+/* Images */
 img {
-  max-width: 450px;
-  margin: 100px auto;
+  max-width: 80%;
+  height: auto;
+  margin: 20px auto;
   display: block;
 }
 
+/* Envelope */
 .envelope {
-  width: 320px;
-  height: 240px;
+  width: 220px;
+  height: 160px;
   background: #ffb6c1;
-  margin: 100px auto;
+  margin: 40px auto;
   position: relative;
   border-radius: 10px;
   animation: rotateEnv 2s infinite alternate;
@@ -76,17 +81,20 @@ img {
   to { transform: rotate(5deg); }
 }
 
+/* Bow icon */
 .bow {
-  font-size: 150px;
+  font-size: 60px;
   cursor: pointer;
 }
 
+/* Moving NO button */
 .no-btn {
   position: absolute;
 }
 
+/* Ring animation */
 .ring {
-  font-size: 200px;
+  font-size: 80px;
   animation: sparkle 1.5s infinite;
 }
 
@@ -212,6 +220,7 @@ function showRing() {
 
 </body>
 </html>
+
 
 
 
