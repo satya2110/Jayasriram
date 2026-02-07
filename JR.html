@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Yevandi 💖</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(135deg, #ffd6e8, #fff0f5);
+  overflow: hidden;
+}
+
+.stage {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+  animation: fadeSlide 1s ease;
+}
+
+.stage.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+h1 {
+  color: #d63384;
+}
+
+p {
+  font-size: 20px;
+  color: #5a0033;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: #ff69b4;
+  color: white;
+  cursor: pointer;
+  margin: 15px;
+  transition: transform 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+img {
+  max-width: 250px;
+  margin: 20px auto;
+  display: block;
+}
+
+.envelope {
+  width: 220px;
+  height: 140px;
+  background: #ffb6c1;
+  margin: 100px auto;
+  position: relative;
+  border-radius: 10px;
+  animation: rotateEnv 2s infinite alternate;
+}
+
+@keyframes rotateEnv {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+.bow {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.no-btn {
+  position: absolute;
+}
+
+.ring {
+  font-size: 80px;
+  animation: sparkle 1.5s infinite;
+}
+
+@keyframes sparkle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2) rotate(10deg); }
+  100% { transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- STAGE 1 -->
+<div class="stage active" id="stage1">
+  <h1>💌 A Small Letter For You 💌</h1>
+  <div class="envelope"></div>
+  <img src="1.gif">
+  <p>From: <b>Ur Yevandi</b> 💕<br>To: <b>My Yevandi</b> 😘</p>
+  <p>🎀 Please kindly tap the bow 🎀</p>
+  <div class="bow" onclick="nextStage()">🎀</div>
+</div>
+
+<!-- STAGE 2 -->
+<div class="stage" id="stage2">
+  <h1>🌹 Happy Rose Day My Dear Andi 🌹</h1>
+  <img src="2.webp">
+  <p>Please accept this rose bouquet dear Andi 💐💖</p>
+  <button onclick="nextStage()">Get the Roses 🌹</button>
+</div>
+
+<!-- STAGE 3 (Propose Day – swapped GIF) -->
+<div class="stage" id="stage3">
+  <h1>💍 Happy Propose Day Dear Bro Garu 💍</h1>
+  <img src="3.gif">
+  <p>Please accept me dear Bro Jayasriram ❤️</p>
+  <button onclick="nextStage()">YES 💖</button>
+  <button class="no-btn" onmouseover="moveNo(this)">NO 😜</button>
+</div>
+
+<!-- STAGE 4 (Chocolate Day – changed to cat gif) -->
+<div class="stage" id="stage4">
+  <h1>🍫 Happy Chocolate Day Sweet Heart 🍫</h1>
+  <img src="4.webp">
+  <p>Sweet treats and sweeter love just for you 😘🍫</p>
+  <button onclick="nextStage()">Take Chocolates 🍬</button>
+</div>
+
+<!-- STAGE 5 (Teddy Day – swapped GIF) -->
+<div class="stage" id="stage5">
+  <h1>🧸 Happy Teddy Day Kuchi Pilla 🧸</h1>
+  <img src="5.webp">
+  <p>This teddy is asking for a hug 🤗💞</p>
+  <button onclick="nextStage()">Get the Teddy 🧸</button>
+</div>
+
+<!-- STAGE 6 -->
+<div class="stage" id="stage6">
+  <h1>🤝 Happy Promise Day Bujjulu 🤝</h1>
+  <p>💖 I promise u dear 💖<br><b>NENE NEETHONEY UNTA KANNA FOREVER</b> 🥹💕</p>
+  <img src="6.gif">
+  <button onclick="nextStage()">Promise ❤️</button>
+</div>
+
+<!-- STAGE 7 -->
+<div class="stage" id="stage7">
+  <h1>🤗 Happy Hug Day Amma Bangaram 🤗</h1>
+  <img src="7.gif">
+  <p>So much love & joy spinning around us 💞✨</p>
+  <button onclick="nextStage()">HUGGING US 🤗</button>
+</div>
+
+<!-- STAGE 8 -->
+<div class="stage" id="stage8">
+  <h1>💋 Happy Kiss Day Ochuluuu 💋</h1>
+  <img src="8.webp">
+  <p>A sweet kiss filled with love 😘💖</p>
+  <button onclick="nextStage()">UUUUUMMMMMAAAAA 💋</button>
+</div>
+
+<!-- STAGE 9 (Valentine – changed to cat marriage gif) -->
+<div class="stage" id="stage9">
+  <h1>💖 Happy Valentine’s Day 💖<br>Yevandi Srimati Garu 💐</h1>
+  <img src="9.webp">
+  <p>Will you marry me Srimati Garu? 🥹💍</p>
+  <button onclick="showRing()">YES 💖</button>
+  <button class="no-btn" onmouseover="moveNo(this)">NO 🙈</button>
+  <div id="ringBox" style="display:none;">
+  <img src="final.webp">
+    <p class="ring">💍</p>
+    <p>I give you my heart, soul & forever 💖🌹</p>
+  </div>
+</div>
+
+<script>
+let current = 1;
+
+function nextStage() {
+  document.getElementById("stage" + current).classList.remove("active");
+  current++;
+  document.getElementById("stage" + current).classList.add("active");
+}
+
+function moveNo(btn) {
+  btn.style.left = Math.random() * 80 + "vw";
+  btn.style.top = Math.random() * 80 + "vh";
+}
+
+function showRing() {
+  document.getElementById("ringBox").style.display = "block";
+}
+</script>
+
+</body>
+</html>
